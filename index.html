@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Album Art Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" id='main' href="css/main.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script defer src='js/options.js' type="text/javascript"></script>
+    <script>
+    </script>
+  </head>
+
+  <body>
+  <section class="section" >
+    <div class='columns is-centered mb-5'>
+    <h1 class="title is-1" style="font-size: 500%;">
+      Album Art Generator
+    </h1>
+    </div>
+    <div class='columns is-centered mb-6'>
+    <h2 class="subtitle" style="text-align: center;">Creates randomised artwork based on scaffold images from <a href='https://www.unsplash.com'>Unsplash.</a> 
+      At the time of writing, all photos from Unsplash are <a href='https://unsplash.com/license'>Royalty Free.</a> <br>
+    Since the image generation happens in your browser, you will need to screenshot the image to download it.</h2>
+    </div>
+    <div class='columns is-centered mb-6'>
+      <div class="mr-6"><h1 style="display: inline-block; font-size: 300%;">Artist </h1> </div>
+        <div class='heading'>
+    <div><h3 style="display: inline-block;">Name </h3> 
+      <input type='text' id='ArtistName' style="display: inline-block;" onchange="setArtistName()"></div>
+    <div><h3 style="display: inline-block;">Font Size </h3> 
+      <input type='number' value='30' id='ArtistFont' style="display: inline-block;" onchange="updateArtistFont()"></div>
+    <div><h3 style="display: inline-block;">Font Colour </h3> 
+        <input type='color' value='#FFFFFF' id='ArtistFontColour' style="display: inline-block;" onchange="updateArtistFontColour()"></div>
+    </div>
+        <br>
+      </div>
+      <div class='columns is-centered mb-6'>
+        <div class="mr-6"><h1 style="display: inline-block; font-size: 300%;">Album </h1> </div>
+            <div class='heading'>
+    <div><h3 style="display: inline-block;">Name </h3> 
+      <input type='text' id='AlbumName' style="display: inline-block;" onchange="setAlbumName()"></div>
+    <div><h3 style="display: inline-block;">Font Size </h3> 
+      <input type='number' value='100' id='AlbumFont' style="display: inline-block;" onchange="updateAlbumFont()"></div>
+    <div><h3 style="display: inline-block;">Font Colour </h3> 
+        <input type='color' value='#FFFFFF' id='AlbumFontColour' style="display: inline-block;" onchange="updateAlbumFontColour()"></div>
+      </div>
+        <br>
+      </div>
+      <div class='columns is-centered mb-6'>
+    <div style='max-width: 1000px'>
+    <select class='mr-6' id="overlay" onchange="toggleOverlay()" style='display: inline-block;'>
+      <option value="noOverlay">No Overlay</option>
+      <option value="CD">CD Overlay</option>
+      <option value="Vinyl">Vinyl Overlay</option>
+    </select>
+    <button style="float: right;" onclick="window.location.reload()">Get new image</button>
+  </div>
+    
+  </div>
+
+  <div class="columns is-centered mt-6">
+    <div class="albumArt2">
+    <div class="albumArt"> 
+      <div class="albumArt">
+        <div class="circle" id='circle'>
+      <div class="albumName" id='album'> 
+        <div class='artistName' id='artist'></div>
+      </div>
+    </div>
+  </div>
+    </div>
+  </div></div>
+
+</div>
+  </section>
+  </body>
+</html>

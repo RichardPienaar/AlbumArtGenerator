@@ -1,0 +1,45 @@
+.albumArt {
+    width: 1000px;
+    height: 1000px;
+    background: url('https://source.unsplash.com/random/1000x1000'),url('https://source.unsplash.com/random/800x800');
+    background-blend-mode: difference;
+}
+
+.albumArt2 {
+    width: 1000px;
+    height: 1000px;
+    background: url('https://source.unsplash.com/random/1000x1000'),url('https://source.unsplash.com/random/800x800');
+    background-blend-mode: color-dodge
+}
+
+.circle {
+    width: 1000px;
+    height: 1000px;
+    background-blend-mode: difference;
+}
+
+.albumName {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  height: 1000px;
+  line-height: 1000px;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 100pt;
+  
+
+}
+
+.artistName {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  color: #FFFFFF;
+  font-size: 30pt;
+  text-align: center;
+
+}
+
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
