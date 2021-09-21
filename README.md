@@ -7,4 +7,4 @@ To Add:
 - Flexible Dimensions
 - Local gallery / Previously generated
 - Flexible scaffold image count
-- Diffeent Fonts
+- Different Fonts
