@@ -1,5 +1,5 @@
 function toggleOverlay() {
-    
+
     var options = document.querySelector('#overlay');
     var circle = document.querySelector('#circle');
 
@@ -12,8 +12,9 @@ function toggleOverlay() {
     else if (options.value == 'Vinyl') {
         circle.style.background = "url('images/innercircle.png')";    }
 
+    localStorage.setItem('Overlay', options.value);
 }
-    
+
 function setArtistName() {
     // sets artist name
     var artist = document.querySelector('#ArtistName');
@@ -29,8 +30,9 @@ function setAlbumName() {
     // sets album name
     var album = document.querySelector('#AlbumName');
     var text = document.querySelector('#album');
+    var artist = document.querySelector('#artist');
 
-    text.innerHTML = "<span id='inside'>" + album.value + "<div class='artistName' id='artist'>"+ setArtistName(); +"</div> </span>";
+    text.innerHTML = "<span id='inside'>" + album.value + "<div class='artistName' id='artist'>"+ artist.innerHTML; +"</div> </span>";
     localStorage.setItem('AlbumName', album.value);
 }
 
@@ -54,7 +56,6 @@ function updateAlbumFont() {
     var text = document.querySelector('#album');
     var fontValue = document.querySelector('#AlbumFont').value;
     text.style.fontSize = fontValue + "px";
-
     localStorage.setItem('AlbumFontValue', fontValue);
 }
 
@@ -68,50 +69,43 @@ function updateAlbumFontColour() {
 
 window.onload = function reloadImage(){
     // Checks local storage for pre filled values
-    if (localStorage.getItem('ArtistName') !== null) {
-        var artist = document.querySelector('#ArtistName');
-        artist.value = localStorage.getItem('ArtistName');
-        var text = document.querySelector('#artist');
-        text.innerHTML = artist.value;
-    }
 
+    if (localStorage.getItem('ArtistName') !== null) {
+        document.querySelector('#ArtistName').value = localStorage.getItem('ArtistName');
+        setArtistName();
+    }
+    if (localStorage.getItem('AlbumName') !== null) {
+        document.querySelector('#AlbumName').value = localStorage.getItem('AlbumName');
+        setAlbumName();
+    }
     if (localStorage.getItem('ArtistFontValue') !== null){
         document.querySelector('#ArtistFont').value = localStorage.getItem('ArtistFontValue');
+        updateArtistFont();
         
-        var text = document.querySelector('#artist');
-        text.style.fontSize = document.querySelector('#ArtistFont').value + "px";
     }
 
     if (localStorage.getItem('ArtistColourValue') !== null) {
-        
         document.querySelector('#ArtistFontColour').value = localStorage.getItem('ArtistColourValue');
-        
-        var text = document.querySelector('#artist');
-        text.style.color = document.querySelector('#ArtistFontColour').value;
+        updateArtistFontColour();
 
     }
 
-    if (localStorage.getItem('AlbumName') !== null) {
-        var album = document.querySelector('#AlbumName');
-        album.value = localStorage.getItem('AlbumName');
-        var text = document.querySelector('#album');
 
-        text.innerHTML = "<span id='inside'>" + album.value + "<div class='artistName' id='artist'>"+ setArtistName(); +"</div> </span>";
 
-    }
-    
     if (localStorage.getItem('AlbumFontValue') !== null) {
         document.querySelector('#AlbumFont').value = localStorage.getItem('AlbumFontValue');
-        var text = document.querySelector('#album');        
-
-        text.style.fontSize = document.querySelector('#AlbumFont').value + "px";
+        updateAlbumFont();
     }
 
     if (localStorage.getItem('AlbumColourValue') !== null) {
         document.querySelector('#AlbumFontColour').value = localStorage.getItem('AlbumColourValue');
+        updateAlbumFontColour();
+    }
 
-        var text = document.querySelector('#album');
-        text.style.color = document.querySelector('#AlbumFontColour').value;
+    if (localStorage.getItem('Overlay') !== null) {
+        document.querySelector('#overlay').value = localStorage.getItem('Overlay');
+        toggleOverlay();
+
     }
 
 
