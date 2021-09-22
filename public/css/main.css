@@ -25,7 +25,8 @@
   text-align: center;
   color: #FFFFFF;
   font-size: 100pt;
-  
+  overflow: hidden;
+
 
 }
 
@@ -34,6 +35,7 @@
   color: #FFFFFF;
   font-size: 30pt;
   text-align: center;
+  overflow: hidden;
 
 }
 
