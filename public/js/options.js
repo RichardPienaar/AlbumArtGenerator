@@ -69,6 +69,7 @@ function updateAlbumFontColour() {
 
 window.onload = function reloadImage(){
     // Checks local storage for pre filled values
+    console.log('reload');
 
     if (localStorage.getItem('ArtistName') !== null) {
         document.querySelector('#ArtistName').value = localStorage.getItem('ArtistName');
@@ -91,7 +92,6 @@ window.onload = function reloadImage(){
     }
 
 
-
     if (localStorage.getItem('AlbumFontValue') !== null) {
         document.querySelector('#AlbumFont').value = localStorage.getItem('AlbumFontValue');
         updateAlbumFont();
@@ -107,6 +107,5 @@ window.onload = function reloadImage(){
         toggleOverlay();
 
     }
-
 
 }
