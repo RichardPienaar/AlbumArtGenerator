@@ -1,7 +1,7 @@
 # AlbumArtGenerator
 
 Public randomised album artwork generator:
-<a href='https://cranky-neumann-48ef3b.netlify.app/'>Try it here</a>
+<a href='https://richardpienaar.com/album.html'>Try it here</a>
 
 To Add:
 - Flexible Dimensions
